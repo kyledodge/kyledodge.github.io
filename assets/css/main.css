@@ -51,7 +51,7 @@ a:after {
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
- hr {
+hr {
     display: block;
     height: 1px;
     border: 0;
@@ -59,11 +59,6 @@ a:after {
     margin: 0;
     padding: 0;
 }
-
-
-/*---------------------------------------------------
-	3.1 Topbar
----------------------------------------------------*/
 
 #section-topbar {
 	position: fixed;
@@ -85,11 +80,6 @@ a:after {
 	text-align: left;
 }
 
-/*
-	Top Bar
-
-	By default, top navigation bar uses "fixed" position
-*/
 #section-topbar ul#nav {
 	display: inline-block;
 	position: relative;
@@ -118,28 +108,25 @@ a:after {
   border-left: 1px solid #222;
 }
 
-	#section-topbar ul#nav a:hover, #section-topbar ul#nav a:active {
-	  background: #222;
-	  text-decoration: none;
-	  border-left: 1px solid #111;
-	}
+#section-topbar ul#nav a:hover, #section-topbar ul#nav a:active {
+  background: #222;
+  text-decoration: none;
+  border-left: 1px solid #111;
+}
 
-	#section-topbar ul#nav .active a {
-		background: none;
-		border-left: 1px solid #111;
-	}
+#section-topbar ul#nav .active a {
+	background: none;
+	border-left: 1px solid #111;
+}
 
-		#section-topbar ul#nav .active a:hover {
-			background: none;
-		}
+#section-topbar ul#nav .active a:hover {
+	background: none;
+}
+
 #section-topbar i {
 	font-size: 25px;
 }
-/*---------------------------------------------------
-	SECTION WRAPS
----------------------------------------------------*/
 
-/* Header Wrap */
 #headerwrap {
 	background: url(../img/bg.jpg) no-repeat center top;
 	padding-top: 60px;
@@ -169,8 +156,6 @@ a:after {
 	font-size: 20px;
 	color: white;
 }
-
-/* Intnro Wrap */
 
 #intro {
 	background: #2c3e50;
@@ -269,8 +254,6 @@ a:after {
 	padding-right: 8px;
 	color: #1abc9c;
 }
-
-/* Global Values */
 
 .desc {
 	padding-top: 20px;
