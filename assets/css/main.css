@@ -51,7 +51,7 @@ a:after {
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
-hr {
+ hr {
     display: block;
     height: 1px;
     border: 0;
@@ -85,10 +85,7 @@ hr {
 	position: relative;
 	margin: 0;
 	padding: 0;
-
 	border-right: 1px solid #222;
-
-	/* For IE, the outcast */
 	zoom:1;
 	*display: inline;
 }
@@ -101,17 +98,17 @@ hr {
 
 
 #section-topbar ul#nav a {
-  display: block;
-  font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  padding: 18px 12px 18px 12px;
-  border-left: 1px solid #222;
+	display: block;
+	font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	padding: 18px 12px 18px 12px;
+	border-left: 1px solid #222;
 }
 
 #section-topbar ul#nav a:hover, #section-topbar ul#nav a:active {
-  background: #222;
-  text-decoration: none;
-  border-left: 1px solid #111;
+	background: #222;
+	text-decoration: none;
+	border-left: 1px solid #111;
 }
 
 #section-topbar ul#nav .active a {
@@ -122,7 +119,6 @@ hr {
 #section-topbar ul#nav .active a:hover {
 	background: none;
 }
-
 #section-topbar i {
 	font-size: 25px;
 }
@@ -191,20 +187,25 @@ hr {
 	color: white;
 }
 
-#projectsList {
+.projectsList {
 	list-style: none;
 	padding: 0;
 }
 
-#projectsList li {
+.projectsList li {
 	margin: 25px 0px;
 }
 
-#projectsList li > h5 {
+.projectsList li > h5 {
 	margin: 0;
 }
 
-#projectsList li > a > button {
+.projectsList li > img {
+	border: solid 1px #999;
+	border-radius: 5px;
+}
+
+.projectsList li > a > button {
 	padding: 3px;
 }
 
