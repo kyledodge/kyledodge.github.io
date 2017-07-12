@@ -1,2 +1,38 @@
-<html><style>h1,h2,h3,h4,h5{margin:0}</style><body><div id="eventList"></div></body><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script><script type="text/javascript">var mykey='AIzaSyDeGhLL3OpxqSwHIJjgBUvih4CafWg1oyI';var calendarid='0gj9rjjc7pkk9hobhj9j2iruek@group.calendar.google.com';$.ajax({type:'GET',url:encodeURI('https://www.googleapis.com/calendar/v3/calendars/'+calendarid+'/events?key='+mykey),dataType:'json',success:function(response){console.log(response.items.length);for(var i=0;i<response.items.length;i++){var item=response.items[i];var event="<div><h2>"+item.summary+"</h2>"+item.description+"<h5>"+moment(item.start.dateTime).format("L")+" "+moment(item.start.dateTime).format("LT")+" - "+moment(item.end.dateTime).format("LT")+"</h5>";if(item.attachments && item.attachments.length>0){event+='<img src="https://drive.google.com/uc?id='+item.attachments[0].fileId+'" width=100 height=100 />'}
-event+="<br><br>";$("#eventList").append(event)}},error:function(response){}});</script></html>
+<html>
+<style>
+h1,h2,h3,h4,h5 { margin: 0;}
+</style>
+<body>
+<div id="eventList"></div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script type="text/javascript">
+var mykey = 'AIzaSyDeGhLL3OpxqSwHIJjgBUvih4CafWg1oyI';
+var calendarid = '0gj9rjjc7pkk9hobhj9j2iruek@group.calendar.google.com';
+$.ajax({
+    type: 'GET',
+    url: encodeURI('https://www.googleapis.com/calendar/v3/calendars/' + calendarid+ '/events?orderBy=startTime&singleEvents=true&key=' + mykey),
+    dataType: 'json',
+    success: function (response) {
+        console.log(response.items.length);
+		
+		for(var i=0; i < response.items.length; i++) {
+			var item = response.items[i];
+			var event = "<div><h2>" + item.summary + "</h2>" + 
+				item.description + "<h5>" + moment(item.start.dateTime).format("L") +  " " + moment(item.start.dateTime).format("LT") +
+				" - " + moment(item.end.dateTime).format("LT") + "</h5>";
+				
+			if(item.attachments && item.attachments.length > 0) {
+				event += '<img src="https://drive.google.com/uc?id=' + item.attachments[0].fileId + '" width=100 height=100 />';
+			}
+			event+= "<br><br>";
+			$("#eventList").append(event);
+			
+		}
+    },
+    error: function (response) {
+    }
+});
+</script>
+</html>
