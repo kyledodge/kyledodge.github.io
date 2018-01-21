@@ -1,0 +1,19 @@
+title:             Kyle Dodge
+email:             dodge.kyle@gmail.com
+description:
+author:            Kyle Dodge
+baseurl:           "/"
+url:               "http://kyledodge.github.io"
+
+# Social Profiles
+twitter_username:  kldodge
+github_username:   kyledodge
+facebook_username: dodge.kyle
+
+# Build settings
+markdown:          kramdown
+paginate:          5
+paginate_path:     "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate

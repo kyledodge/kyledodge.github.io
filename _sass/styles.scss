@@ -1,0 +1,34 @@
+// Import Core Clean Blog SCSS
+@import "../assets/vendor/startbootstrap-clean-blog/scss/clean-blog.scss";
+
+header.masthead {
+  margin-bottom: 0;
+  height: 300px;
+  background-position-y: 0 !important;
+
+}
+
+header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
+  padding: 125px 0 150px;
+}
+
+header.masthead .page-heading h1 {
+  background: #fff;
+  color: #333;
+  padding: 5px 10px 10px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-nav {
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+  -ms-flex-direction: initial;
+  flex-direction: initial;
+}
+
+.nav-link {
+  margin: 0 10px;
+}
