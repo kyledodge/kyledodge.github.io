@@ -1,0 +1,110 @@
+---
+layout: post
+title:  "Custom Blogging on a Budget"
+comments: true
+subtitle: "Combine free services such as Github and Cloudflare to create a custom, fast and secure blog"
+date:   2018-10-01 5:45:13 -0700
+background: '/img/posts/custom-blog-budget.jpg'
+---
+
+<p>
+    I have a love-hate relationship with blogs. As a developer, I use blogs daily when they turn up
+    when searching how to use a feature or fix an error. They are invaluable, and I’m not
+    sure how I would do my job without them.  Though when it comes to actually writing my own blog, I tend to lose sight of
+    this same value I could be giving back to others. To kick this off, I wanted to show how I created this blog which
+    doesn’t cost me a dime, and how much fun the process itself was.
+</p>
+
+<h2 class="section-heading">Jekyll</h2><hr>
+<p>
+    <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is an open source static site generator used to transform
+    files (like markdown) into a static html site. It was created back in 2008 by Tom Preston-Werner - the co-founder
+    of Github. As such, it has some great integration with Github that I’ll get into next. My favorite part
+    about Jekyll is the philosophy behind it and the following quote from it’s README file:
+    <blockquote>
+        Jekyll does what you tell it to do — no more, no less. It doesn't try to outsmart users by making bold assumptions,
+        nor does it burden them with needless complexity and configuration. Put simply, Jekyll gets out of your way and
+        allows you to concentrate on what truly matters: your content.
+    </blockquote>
+</p>
+
+<h4>Getting Started</h4>
+<p>
+    Jekyll’s <a href="https://jekyllrb.com/docs/installation/" target="_blank">installation documentation</a> is top-notch,
+    so I won’t try and duplicate it here. Follow the steps for the environment you want to use and
+    you should be up and running within a few minutes. Here are a few helpful tutorials I used as well:
+    <ul>
+        <li>
+            <a href="https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/" target="_blank">
+                https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/
+            </a>
+        </li>
+        <li>
+            <a href="https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/" target="_blank">
+                https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
+            </a>
+        </li>
+    </ul>
+</p>
+
+<h4>Themes</h4>
+<p>
+    Once you are up and running, you’ll want to apply a theme to get rid of the default look and feel. There are many
+    free themes to choose from at <a href="http://jekyllthemes.org" target="_blank">http://jekyllthemes.org</a>.
+    You can even clone the theme’s git repository and use that as a starting point to get up and running quickly. That is
+    what I wound up doing and it make the configuration process much simpler.
+</p>
+
+<h2 class="section-heading">Github Pages</h2><hr>
+<p>
+    Now that you've got your blog setup, you need a place to host it. Fortunately Github allows you to host a site for free
+    and even includes continuous integration and deployment. As soon as you commit your files, they will be compiled and
+    deployed to your pages site automatically.
+</p>
+<p>
+    To get started, head over to <a href="https://pages.github.com/" target="_blank">https://pages.github.com</a> for
+    instructions on setting up github pages to host this blog content. You are basically creating a git repository called
+    username.github.io and adding your files to it. Github is configured to build and serve this project as soon as
+    files are pushed to the repository, and will show up almost instantly on the site.
+</p>
+
+<h2 class="section-heading">Custom Domain</h2><hr>
+<p>
+    You’ll likely want to setup a custom domain to use for your blog. I would recommend
+    <a href="https://www.cloudflare.com/products/registrar/" target="_blank">Cloudflare</a> as a domain registrar as
+    they have a wholesale rate and include whois privacy at no charge. Once you purchase your domain (or if you have one already),
+    you'll need to configure your DNS servers to point to Cloudflare (more on this in the next step). Once the DNS
+    servers are updated, save the changes and allow the changes to propogate. You can always check
+    <a href="https://www.whatsmydns.net/" target="_blank">https://www.whatsmydns.net/</a> to see the propagation status.
+</p>
+
+<h2 class="section-heading">Cloudflare</h2><hr>
+<p>
+    <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a> is a great service and with a free account you
+    get access to powerful features like worldwide caching, SSL and DDoS protection.
+    Register for a free Cloudflare account and navigate to the “Add a Site” area. Once you add your site, head over
+    to the “DNS” section to wrap up the Github pages configuration. For this example, I’m going to show
+    www.mydomain.com using a CNAME record. Input “www” as the name and your github pages url as the domain name.
+    Hit the add record button and Cloudflare will now respond to www.domain.com with your github pages site.
+    Navigate to the “Crypto” option and enable SSL with the flexible option. This will allow your users to visit your
+    site under https with a Cloudflare certificate. The great part is you don't have to manage this certificate, and it's free.
+    One more thing you will need to do is head back to your Github account and under the repository settings, set the custom
+    domain field to www.mydomain.com.
+</p>
+
+<h2 class="section-heading">Disqus</h2><hr>
+<p>
+    People are going to want to comment on your blog,
+    so you’ll want a place for them to do that. <a href="https://www.disqus.com/" target="_blank">Disqus</a>
+    provides a free platform to do this, and is advertisement-free
+    for personal & non-commercial sites. Sign up for a free account and pick a subdomain name to use (mysite.disqus.com).
+    Once you are signed up for an account, you’ll need to copy a block of code into your Jekyll layout file.
+</p>
+
+<h2 class="section-heading">You are done!</h2><hr>
+
+<p>
+    I hope this helped to layout plugging multiple services together to create a fast, secure and free blog. Although
+    it requires some setup, if you enjoy that kind of thing it can be a fun experience. Enjoy!
+</p>
+
